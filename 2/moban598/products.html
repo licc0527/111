@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>商品列表</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='#css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='#css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>	
+<!-- start menu -->
+<script src="js/simpleCart.min.js"> </script>
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>				
+</head>
+<body> 
+	<!--top-header-->
+	<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				<div class="search-bar">
+					<input type="text" value="搜索" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '搜索';}">
+					<input type="submit" value="">
+				</div>
+			</div>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img src="images/logo-4.png" alt="" /></a>
+			</div>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1">
+						<a href="checkout.html">
+						<h3> <div class="total">
+							<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> 件商品)</div>
+							<img src="images/cart-1.png" alt="" />
+						</a>
+						<p><a href="javascript:;" class="simpleCart_empty">清空购物车</a></p>
+						<div class="clearfix"> </div>
+					</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--top-header-->
+<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue"><li class="active"><a href="index.html">首页</a></li>
+					<li class="grid"><a href="#">男装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">登录</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">我的购物袋</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>时尚专区</h4>
+									<ul>
+										<li><a href="products.html">男士</a></li>
+										<li><a href="products.html">女士</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">时尚视频</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>热门品牌</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">女装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">儿童</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">运动</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">品牌</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>Shop</h4>
+									<ul>
+										<li><a href="products.html">New Arrivals</a></li>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">login</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">My Shopping Bag</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>Style Zone</h4>
+									<ul>
+										<li><a href="products.html">Men</a></li>
+										<li><a href="products.html">Women</a></li>
+										<li><a href="products.html">Brands</a></li>
+										<li><a href="products.html">Kids</a></li>
+										<li><a href="products.html">Accessories</a></li>
+										<li><a href="products.html">Style Videos</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>Popular Brands</h4>
+									<ul>
+										<li><a href="products.html">Levis</a></li>
+										<li><a href="products.html">Persol</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">Edwin</a></li>
+										<li><a href="products.html">New Balance</a></li>
+										<li><a href="products.html">Jack & Jones</a></li>
+										<li><a href="products.html">Paul Smith</a></li>
+										<li><a href="products.html">Ray-Ban</a></li>
+										<li><a href="products.html">Wood Wood</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--bottom-header-->
+	<!--start-breadcrumbs-->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="index.html">首页</a></li>
+					<li class="active">新品上市</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<!--end-breadcrumbs-->
+	<!--start-product--> 
+	<div class="product">
+		<div class="container">
+			<div class="product-main">
+				<div class="col-md-9 p-left">
+				<div class="product-one">
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-1.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+					</div>
+				</div>
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-2.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+					</div>
+				</div>
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-3.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="product-one">
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-5.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+					</div>
+				</div>
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-6.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+					</div>
+				</div>
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-7.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+					</div>
+				</div>
+			<div class="clearfix"> </div>
+			</div>
+			<div class="product-one">
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-15.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+						
+					</div>
+				</div>
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-10.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+						
+					</div>
+				</div>
+				<div class="col-md-4 product-left single-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<a href="single.html">
+								<img src="images/shoes-11.png" alt="" />
+								<div class="mask mask1">
+									<span>快速查看</span>
+								</div>
+							</a>
+						<h4>时尚鞋品</h4>
+						<p><a class="item_add" href="#"><i></i> <span class=" item_price">¥329</span></a></p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			</div>
+			<div class="col-md-3 p-right single-right">
+				<h3>分类</h3>
+					<ul class="product-categories">
+						<li><a href="#">布鲁赫鞋</a> <span class="count">(14)</span></li>
+						<li><a href="#">木底鞋</a> <span class="count">(2)</span></li>
+						<li><a href="#">雪地靴</a> <span class="count">(2)</span></li>
+						<li><a href="#">胶鞋</a> <span class="count">(11)</span></li>
+						<li><a href="#">帆布鞋</a> <span class="count">(3)</span></li>
+						<li><a href="#">爵士鞋</a> <span class="count">(3)</span></li>
+					</ul>
+					<h3>颜色</h3>
+					<ul class="product-categories">
+						<li><a href="#">绿色</a> <span class="count">(14)</span></li>
+						<li><a href="#">蓝色</a> <span class="count">(2)</span></li>
+						<li><a href="#">红色</a> <span class="count">(2)</span></li>
+						<li><a href="#">灰色</a> <span class="count">(8)</span></li>
+						<li><a href="#">绿色</a> <span class="count">(11)</span></li>
+						<li><a href="#">黄色</a> <span class="count">(2)</span></li>
+					</ul>
+					<h3>尺码</h3>
+					<ul class="product-categories">
+						<li><a href="#">5.5</a> <span class="count">(14)</span></li>
+						<li><a href="#">6</a> <span class="count">(2)</span></li>
+						<li><a href="#">6.5</a> <span class="count">(2)</span></li>
+						<li><a href="#">7</a> <span class="count">(8)</span></li>
+						<li><a href="#">7.5</a> <span class="count">(11)</span></li>
+					</ul>
+					<h3>价格</h3>
+					<ul class="product-categories p1">
+						<li><a href="#">¥600-¥700</a> <span class="count">(14)</span></li>
+						<li><a href="#">¥700-¥800</a> <span class="count">(2)</span></li>
+						<li><a href="#">¥800-¥900</a> <span class="count">(2)</span></li>
+						<li><a href="#">¥900-¥1000</a> <span class="count">(8)</span></li>
+						<li><a href="#">¥1000-¥1100</a> <span class="count">(11)</span></li>
+					</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	</div>
+	<!--end-product-->
+	<!--start-footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="col-md-3 footer-left">
+					<h3>关于我们</h3>
+					<ul>
+						<li><a href="#">我们是谁</a></li>
+						<li><a href="contact.html">联系我们</a></li>
+						<li><a href="#">我们的网站</a></li>
+						<li><a href="#">新闻动态</a></li>
+						<li><a href="#">团队</a></li>
+						<li><a href="#">招贤纳士</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-3 footer-left">
+					<h3>您的账户</h3>
+					<ul>
+						<li><a href="account.html">您的账户</a></li>
+						<li><a href="#">个人信息</a></li>
+						<li><a href="contact.html">收货地址</a></li>
+						<li><a href="#">优惠信息</a></li>
+						<li><a href="#">订单追踪</a></li>					 					 
+					</ul>
+				</div>
+				<div class="col-md-3 footer-left">
+					<h3>客户服务</h3>
+					<ul>
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">配送信息</a></li>
+						<li><a href="#">取消订单</a></li>
+						<li><a href="#">退换货</a></li>
+						<li><a href="#">批发订单</a></li>
+						<li><a href="#">购买指南</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-3 footer-left">
+					<h3>商品分类</h3>
+					<ul>
+						<li><a href="#">运动鞋</a></li>
+						<li><a href="#">休闲鞋</a></li>
+						<li><a href="#">正装鞋</a></li>
+						<li><a href="#">派对鞋</a></li>
+						<li><a href="#">民族风格</a></li>				 
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--end-footer-->
+	<!--end-footer-text-->
+	<div class="footer-text">
+		<div class="container">
+			<div class="footer-main">
+				<p class="footer-class">Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://guantaow.taobao.com/">厚朴网络淘宝店</a><a target="_blank" href="http://www.moobnn.com">网页模板</a></p>
+			</div>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+	<!--end-footer-text-->	
+</body>
+</html>
