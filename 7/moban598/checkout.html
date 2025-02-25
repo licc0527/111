@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>结算页面</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>	
+<!-- start menu -->
+<script src="js/simpleCart.min.js"> </script>
+<script src="js/cart-config.js"></script>
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script type="text/javascript" src="js/login-status.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>				
+<script src="js/search.js"></script>
+<style>
+/* 购物车商品标题样式 */
+.cart-sec h3 {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-sec h3 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.close1, .close2, .close3 {
+    background: url('../images/close.png') no-repeat 0px 0px;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    -webkit-transition: color 0.2s ease-in-out;
+    -moz-transition: color 0.2s ease-in-out;
+    -o-transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out;
+}
+
+.cart-header, .cart-header1, .cart-header2 {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.qty-btn {
+  padding: 2px 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+}
+
+.qty-input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 3px;
+}
+
+.color-select {
+  padding: 3px;
+  border: 1px solid #ddd;
+}
+
+.simpleCart_remove {
+  color: #8c2830;
+  text-decoration: none;
+}
+
+.simpleCart_remove:hover {
+  color: #000;
+}
+
+.cart-items {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.cart-header {
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.cart-sec {
+    padding: 15px 0;
+}
+
+.cart-items h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+}
+
+.cart-header .cart-sec:first-child {
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 12px 0;
+}
+
+.cart-header .cart-sec:first-child span {
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.cart-total {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.cart-total span {
+    color: #333;
+    font-weight: bold;
+}
+
+/* 购物车商品项样式 */
+.simpleCart_items .cart-sec {
+    background: #fff;
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.simpleCart_items .cart-sec:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 删除按钮样式 */
+.simpleCart_remove {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.simpleCart_remove:hover {
+    color: #ff4444;
+}
+
+.cart-item {
+    background: #fff;
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.cart-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body> 
+	<!--top-header-->
+	<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				<div class="search-bar">
+					<input type="text" id="searchInput" placeholder="搜索商品..." onkeyup="handleSearch(event)">
+					<input type="submit" value="" onclick="handleSearch(event)">
+				</div>
+			</div>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img src="images/logo-4.png" alt="" /></a>
+			</div>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1" style="float: left;">
+					<a href="checkout.html">
+						<h3> 
+							<div class="total">
+								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> 件商品)
+							</div>
+							<img src="images/cart-1.png" alt="" />
+						</h3>
+					</a>
+					<p><a href="javascript:;" onclick="clearCart()">清空购物车</a></p>
+				</div>
+				<div class="cart box_1" style="float: left; margin-left: 15px;">
+					<a href="account.html">
+						<h3> 
+							<div class="total" style="margin-top: 10px;">
+								<img src="images/user.png" alt="" style="width: 20px; vertical-align: middle;"/>
+								<span style="vertical-align: middle;">登录/注册</span>
+							</div>
+						</h3>
+					</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--top-header-->
+<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue">
+					<li class="active"><a href="index.html">首页</a></li>
+					<li class="grid"><a href="#">商店</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>样式</h4>
+									<ul>
+										<li><a href="products.html">男士</a></li>
+										<li><a href="products.html">女士</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">配饰</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>热门品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">男装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>大众品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>奢侈品牌</h4>
+									<ul>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">女装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>大众品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>奢侈品牌</h4>
+									<ul>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">品牌</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>样式</h4>
+									<ul>
+										<li><a href="products.html">男士</a></li>
+										<li><a href="products.html">女士</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">配饰</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>热门品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--bottom-header-->
+	<!--start-breadcrumbs-->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="index.html">首页</a></li>
+					<li class="active">结算</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<!--end-breadcrumbs-->
+	<!--start-ckeckout-->
+	<div class="ckeckout">
+		<div class="container">
+			<div class="ckeckout-top">
+				<div class="cart-items heading">
+					<h3>我的购物袋 (<span class="simpleCart_quantity"></span>)</h3>
+					
+					<div class="in-check">
+						<ul class="unit" style="display: flex; align-items: center; padding: 10px 20px;">
+							<li style="width: 15%;"><span>商品图片</span></li>
+							<li style="width: 25%;"><span>商品信息</span></li>		
+							<li style="width: 15%;"><span>单价</span></li>
+							<li style="width: 20%;"><span>数量</span></li>
+							<li style="width: 15%;"><span>小计</span></li>
+							<li style="width: 10%;"><span>操作</span></li>
+							<div class="clearfix"></div>
+						</ul>
+						
+						<!-- 购物车内容 -->
+						<div class="simpleCart_items">
+							<!-- 这里会自动显示购物车中的商品，格式如下 -->
+						</div>
+						
+						<!-- 总计 -->
+						<div class="cart-total">
+							<div style="text-align: right;">
+								<span style="font-size: 18px;">总计: ¥<span class="simpleCart_total"></span></span>
+								<button onclick="checkout()" class="checkout-btn" style="
+									margin-left: 20px;
+									padding: 8px 25px;
+									background: #333;
+									color: white;
+									border: none;
+									border-radius: 4px;
+									cursor: pointer;
+									font-size: 16px;">
+									结算
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end-ckeckout-->
+	<!--start-footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>关于我们</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">我们是谁</a></li>
+						<li><a href="contact.html">联系我们</a></li>
+						<li><a href="#">我们的网站</a></li>
+						<li><a href="#">新闻动态</a></li>
+						<li><a href="#">团队</a></li>
+						<li><a href="#">招贤纳士</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>客户服务</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">配送信息</a></li>
+						<li><a href="#">取消订单</a></li>
+						<li><a href="#">退换货</a></li>
+						<li><a href="#">批发订单</a></li>
+						<li><a href="#">购买指南</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>商品分类</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">运动鞋</a></li>
+						<li><a href="#">休闲鞋</a></li>
+						<li><a href="#">正装鞋</a></li>
+						<li><a href="#">派对鞋</a></li>
+						<li><a href="#">民族风格</a></li>				 
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--end-footer-->
+	<!--end-footer-text-->
+	<div class="footer-text">
+		<div class="container">
+			<div class="footer-main">
+				<p class="footer-class">Copyright &copy; 2024 商城名称 All rights reserved.</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+	<!--end-footer-text-->	
+	<!-- 添加simpleCart配置 -->
+	<script>
+	simpleCart({
+		cartColumns: [
+			{ view: function(item, column){
+				return `<div class="cart-item">
+					<div class="cart-sec simpleCart_shelfItem" style="display: flex; align-items: center; padding: 15px 20px;">
+						<!-- 商品图片 -->
+						<div style="width: 15%;">
+							<img src="${item.get('image')}" class="img-responsive" alt=""/>
+						</div>
+						
+						<!-- 商品信息 -->
+						<div style="width: 25%;">
+							<h3><a href="single.html">${item.get('name')}</a></h3>
+							<div class="delivery">
+								<p>尺码: ${item.get('size')}</p>
+							</div>
+						</div>
+						
+						<!-- 单价 -->
+						<div style="width: 15%;">
+							<span class="price">¥${item.get('price')}</span>
+						</div>
+						
+						<!-- 数量 -->
+						<div style="width: 20%;">
+							<div class="quantity-controls">
+								<button onclick="decreaseQuantity(this)" class="qty-btn">-</button>
+								<input type="number" value="${item.get('quantity')}" min="1" 
+									   onchange="updateQuantity(this)" class="qty-input"/>
+								<button onclick="increaseQuantity(this)" class="qty-btn">+</button>
+							</div>
+						</div>
+						
+						<!-- 小计 -->
+						<div style="width: 15%;">
+							<span class="subtotal">¥${item.get('price') * item.get('quantity')}</span>
+						</div>
+						
+						<!-- 删除按钮 -->
+						<div style="width: 10%;">
+							<a href="javascript:;" class="simpleCart_remove">删除</a>
+						</div>
+					</div>
+				</div>`;
+			}, attr: 'custom' }
+		],
+		cartStyle: 'div'
+	});
+	</script>
+	<script>
+		function updateQuantity(input) {
+			let quantity = parseInt(input.value);
+			if(quantity < 1) quantity = 1;
+			input.value = quantity;
+			
+			// 获取商品信息并更新simpleCart中的数量
+			const cartItem = input.closest('.cart-sec');
+			const itemName = cartItem.querySelector('h3 a').textContent;
+			const itemSize = cartItem.querySelector('.delivery p').textContent.split(': ')[1];
+			
+			simpleCart.items().forEach(item => {
+				if(item.get('name') === itemName && item.get('size') === itemSize) {
+					item.quantity(quantity);
+					// 更新右上角购物车数量
+					document.querySelector('.simpleCart_quantity').textContent = simpleCart.quantity();
+				}
+			});
+			
+			// 更新小计
+			let price = parseFloat(input.closest('.cart-sec').querySelector('.price').textContent.slice(1));
+			input.closest('.cart-sec').querySelector('.subtotal').textContent = '¥' + (price * quantity).toFixed(2);
+			
+			// 更新总计
+			updateTotal();
+		}
+		
+		function decreaseQuantity(btn) {
+			let input = btn.nextElementSibling;
+			if(input.value > 1) {
+				input.value = parseInt(input.value) - 1;
+				updateQuantity(input);
+			}
+		}
+		
+		function increaseQuantity(btn) {
+			let input = btn.previousElementSibling;
+			input.value = parseInt(input.value) + 1;
+			updateQuantity(input);
+		}
+		
+		function updateColor(select) {
+			// 这里可以添加更新商品颜色的逻辑
+		}
+		
+		function updateTotal() {
+			let total = 0;
+			document.querySelectorAll('.subtotal').forEach(span => {
+				total += parseFloat(span.textContent.slice(1));
+			});
+			// 更新所有显示总计的地方
+			document.querySelectorAll('.simpleCart_total').forEach(span => {
+				span.textContent = '¥' + total.toFixed(2);
+			});
+			// 更新结算总金额
+			document.querySelector('.total-amount').textContent = '¥' + total.toFixed(2);
+		}
+	</script>
+	<script>
+	function checkout() {
+		const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+		if(!currentUser) {
+			alert('请先登录');
+			window.location.href = 'account.html';
+			return;
+		}
+		
+		// 检查购物车是否为空
+		if(simpleCart.items().length === 0) {
+			alert('购物车为空，请先添加商品');
+			return;
+		}
+		
+		// 保存订单信息到localStorage
+		const orderInfo = {
+			items: simpleCart.items().map(item => ({
+				name: item.get('name'),
+				price: item.get('price'),
+				quantity: item.get('quantity'),
+				size: item.get('size'),
+				image: item.get('image'),
+				total: item.get('price') * item.get('quantity')
+			})),
+			total: simpleCart.total(),
+			date: new Date().toISOString()
+		};
+		
+		localStorage.setItem('currentOrder', JSON.stringify(orderInfo));
+		
+		// 跳转到订单确认页面
+		window.location.href = 'order-confirm.html';
+	}
+	</script>
+</body>
+</html>
