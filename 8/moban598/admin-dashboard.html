@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>管理员控制面板</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/admin.css" rel="stylesheet" type="text/css" media="all" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/admin-dashboard.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="admin-header">
+            <h2>管理员控制面板</h2>
+            <div class="admin-nav">
+                <a href="#" class="active" onclick="showSection('products')">商品管理</a>
+                <a href="#" onclick="showSection('users')">用户管理</a>
+                <a href="#" onclick="logout()">退出登录</a>
+            </div>
+        </div>
+        
+        <!-- 商品管理部分 -->
+        <div id="productsSection" class="admin-section">
+            <h3>商品管理</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>商品图片</th>
+                        <th>商品名称</th>
+                        <th>品牌</th>
+                        <th>价格</th>
+                        <th>库存</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="productsList">
+                    <!-- 商品列表将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+            <button class="btn btn-primary" onclick="addProduct()">添加新商品</button>
+        </div>
+        
+        <!-- 用户管理部分 -->
+        <div id="usersSection" class="admin-section" style="display: none;">
+            <h3>用户管理</h3>
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <button class="btn btn-primary" onclick="showAddUserForm()">添加新用户</button>
+                </div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>用户名</th>
+                        <th>邮箱</th>
+                        <th>注册时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="usersList">
+                    <!-- 用户列表将通过JavaScript动态加载 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 添加用户模态框 -->
+    <div class="modal fade" id="addUserModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">添加新用户</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="addUserForm">
+                        <div class="form-group">
+                            <label>用户名</label>
+                            <input type="text" class="form-control" id="newUserName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>邮箱</label>
+                            <input type="email" class="form-control" id="newUserEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>密码</label>
+                            <input type="password" class="form-control" id="newUserPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" onclick="addNewUser()">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

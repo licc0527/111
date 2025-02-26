@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Free Style Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--fonts-->
+<link href='#css?family=Alegreya+Sans+SC:100,300,400,500,700,800,900,100italic,300italic,400italic,500italic,700italic,800italic,900italic' rel='stylesheet' type='text/css'>
+<link href='#css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+					jQuery(document).ready(function($) {
+						$(".scroll").click(function(event){		
+							event.preventDefault();
+							$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+						});
+					});
+				</script>	
+<!-- start menu -->
+<script src="js/simpleCart.min.js"> </script>
+<script src="js/cart-config.js"></script>
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script type="text/javascript" src="js/login-status.js"></script>
+<script type="text/javascript" src="js/index-display.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>				
+<script src="js/search.js"></script>
+</head>
+<body> 
+	<!--top-header-->
+	<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				<div class="search-bar">
+					<input type="text" id="searchInput" placeholder="搜索商品..." onkeyup="handleSearch(event)">
+					<input type="submit" value="" onclick="handleSearch(event)">
+				</div>
+			</div>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img src="images/logo-4.png" alt="" /></a>
+			</div>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1" style="float: left;">
+					<a href="checkout.html">
+						<h3> 
+							<div class="total">
+								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> 件商品)
+							</div>
+							<img src="images/cart-1.png" alt="" />
+						</h3>
+					</a>
+					<p><a href="javascript:;" onclick="clearCart()">清空购物车</a></p>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="cart box_1" style="float: left; margin-left: 15px;">
+					<a href="account.html">
+						<h3> 
+							<div class="total" style="margin-top: 10px;">
+								<img src="images/user.png" alt="" style="width: 20px; vertical-align: middle;"/>
+								<span style="vertical-align: middle;">登录/注册</span>
+							</div>
+						</h3>
+					</a>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--top-header-->
+	<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue">
+					<li class="active"><a href="index.html">首页</a></li>
+					<li class="grid"><a href="#">商店</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>样式</h4>
+									<ul>
+										<li><a href="products.html">男士</a></li>
+										<li><a href="products.html">女士</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">配饰</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>热门品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">男装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>大众品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>奢侈品牌</h4>
+									<ul>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">女装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>大众品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>奢侈品牌</h4>
+									<ul>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">品牌</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>样式</h4>
+									<ul>
+										<li><a href="products.html">男士</a></li>
+										<li><a href="products.html">女士</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">配饰</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>热门品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--bottom-header-->
+	<!--banner-starts-->
+	<div class="bnr" id="home">
+		<div  id="top" class="callbacks_container">
+			<ul class="rslides" id="slider4">
+			    <li>
+					<div class="banner-1"></div>
+				</li>
+				<li>
+					<div class="banner-2"></div>
+				</li>
+				<li>
+					<div class="banner-3"></div>
+				</li>
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!--banner-ends--> 
+	<!--Slider-Starts-Here-->
+				<script src="js/responsiveslides.min.js"></script>
+			 <script>
+			    // You can also use "$(window).load(function() {"
+			    $(function () {
+			      // Slideshow 4
+			      $("#slider4").responsiveSlides({
+			        auto: true,
+			        pager: true,
+			        nav: false,
+			        speed: 500,
+			        namespace: "callbacks",
+			        before: function () {
+			          $('.events').append("<li>before event fired.</li>");
+			        },
+			        after: function () {
+			          $('.events').append("<li>after event fired.</li>");
+			        }
+			      });
+			
+			    });
+			  </script>
+			<!--End-slider-script-->
+	<!--start-banner-bottom--> 
+	<div class="banner-bottom">
+		<div class="container">
+			<div style="padding: 20px;">
+				<div class="banner-bottom-top">
+					<div class="col-md-6 banner-bottom-left">
+						<div class="bnr-one">
+							<div class="bnr-left">
+								<h1><a href="single.html">精品推荐</a></h1>
+								<p>优质商品，超值价格</p>
+								<div class="b-btn"> 
+									<a href="single.html">立即购买</a>
+								</div>
+							</div>
+							<div class="bnr-right"> 
+								<a href="single.html"><img src="images/b-1.jpg" alt="" /></a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="col-md-6 banner-bottom-right">
+						<div class="bnr-two">
+							<div class="bnr-left">
+								<h2><a href="single.html">特别优惠</a></h2>
+								<p>限时特惠，机不可失</p>
+								<div class="b-btn"> 
+									<a href="single.html">立即购买</a>
+								</div>
+							</div>
+							<div class="bnr-right"> 
+								<a href="single.html"><img src="images/b-2.jpg" alt="" /></a>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end-banner-bottom--> 
+	<!--start-shoes--> 
+	<div class="shoes"> 
+		<div class="container"> 
+			<div class="product-one">
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">							
+						<!-- 商品1将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<!-- 商品2将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<!-- 商品3将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<!-- 商品4将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<!-- 商品5将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<!-- 商品6将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<!-- 商品7将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="col-md-3 product-left"> 
+					<div class="p-one simpleCart_shelfItem">
+						<!-- 商品8将通过JavaScript动态加载 -->
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--end-shoes-->
+	<!--start-abt-shoe-->
+	<div class="abt-shoe">
+		<div class="container">
+			<div style="padding: 20px;">
+				<div class="abt-shoe-main">
+					<div class="col-md-4 abt-shoe-left">
+						<div class="abt-one">
+							<a href="single.html"><img src="images/1.jpg" alt="" /></a>
+							<h4><a href="single.html">精选商品</a></h4>
+							<p>我们精心挑选的优质商品，采用高品质材料制作，让您穿着舒适，展现独特魅力。</p>
+						</div>
+					</div>
+					<div class="col-md-4 abt-shoe-left">
+						<div class="abt-one">
+							<a href="single.html"><img src="images/3.jpg" alt="" /></a>
+							<h4><a href="single.html">时尚设计</a></h4>
+							<p>紧跟潮流的时尚设计，为您带来独特的穿着体验，让您在任何场合都展现出色风采。</p>
+						</div>
+					</div>
+					<div class="col-md-4 abt-shoe-left">
+						<div class="abt-one">
+							<a href="single.html"><img src="images/2.jpg" alt="" /></a>
+							<h4><a href="single.html">品质保证</a></h4>
+							<p>严格的品质把控，确保每一件商品都达到最高标准，为您提供最优质的购物体验。</p>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end-abt-shoe-->
+	<!--start-footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>关于我们</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">我们是谁</a></li>
+						<li><a href="contact.html">联系我们</a></li>
+						<li><a href="#">我们的网站</a></li>
+						<li><a href="#">新闻动态</a></li>
+						<li><a href="#">团队</a></li>
+						<li><a href="#">招贤纳士</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>客户服务</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">配送信息</a></li>
+						<li><a href="#">取消订单</a></li>
+						<li><a href="#">退换货</a></li>
+						<li><a href="#">批发订单</a></li>
+						<li><a href="#">购买指南</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>商品分类</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">运动鞋</a></li>
+						<li><a href="#">休闲鞋</a></li>
+						<li><a href="#">正装鞋</a></li>
+						<li><a href="#">派对鞋</a></li>
+						<li><a href="#">民族风格</a></li>				 
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--end-footer-->
+	
+	<!-- 版权信息 -->
+	<div class="footer-text">
+		<div class="container">
+			<div class="footer-main">
+				<p class="footer-class">Copyright &copy; 2024 商城名称 All rights reserved.</p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

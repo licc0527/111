@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个人中心</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery-1.11.0.min.js"></script>
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />	
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".scroll").click(function(event){		
+      event.preventDefault();
+      $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+    });
+  });
+</script>	
+<script src="js/simpleCart.min.js"> </script>
+<script src="js/cart-config.js"></script>
+<link href="css/memenu.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="js/memenu.js"></script>
+<script type="text/javascript" src="js/login-status.js"></script>
+<script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<script src="js/search.js"></script>				
+</head>
+<body> 
+	<!--top-header-->
+	<div class="top-header">
+	<div class="container">
+		<div class="top-header-main">
+			<div class="col-md-4 top-header-left">
+				<div class="search-bar">
+					<input type="text" id="searchInput" placeholder="搜索商品..." onkeyup="handleSearch(event)">
+					<input type="submit" value="" onclick="handleSearch(event)">
+				</div>
+			</div>
+			<div class="col-md-4 top-header-middle">
+				<a href="index.html"><img src="images/logo-4.png" alt="" /></a>
+			</div>
+			<div class="col-md-4 top-header-right">
+				<div class="cart box_1" style="float: left;">
+					<a href="checkout.html">
+						<h3> 
+							<div class="total">
+								<span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> 件商品)
+							</div>
+							<img src="images/cart-1.png" alt="" />
+						</h3>
+					</a>
+					<p><a href="javascript:;" onclick="clearCart()">清空购物车</a></p>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="cart box_1" style="float: left; margin-left: 15px;">
+					<a href="account.html">
+						<h3> 
+							<div class="total" style="margin-top: 10px;">
+								<img src="images/user.png" alt="" style="width: 20px; vertical-align: middle;"/>
+								<span style="vertical-align: middle;">登录/注册</span>
+							</div>
+						</h3>
+					</a>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<!--top-header-->
+<!--bottom-header-->
+	<div class="header-bottom">
+		<div class="container">
+			<div class="top-nav">
+				<ul class="memenu skyblue">
+					<li class="active"><a href="index.html">首页</a></li>
+					<li class="grid"><a href="#">商店</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>样式</h4>
+									<ul>
+										<li><a href="products.html">男士</a></li>
+										<li><a href="products.html">女士</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">配饰</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>热门品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">男装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>大众品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>奢侈品牌</h4>
+									<ul>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">女装</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>大众品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>奢侈品牌</h4>
+									<ul>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+					<li class="grid"><a href="#">品牌</a>
+						<div class="mepanel">
+							<div class="row">
+								<div class="col1 me-one">
+									<h4>商店</h4>
+									<ul>
+										<li><a href="products.html">新品到达</a></li>
+										<li><a href="products.html">男装</a></li>
+										<li><a href="products.html">女装</a></li>
+										<li><a href="products.html">配饰</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">品牌</a></li>
+									</ul>
+								</div>
+								<div class="col1 me-one">
+									<h4>样式</h4>
+									<ul>
+										<li><a href="products.html">男士</a></li>
+										<li><a href="products.html">女士</a></li>
+										<li><a href="products.html">品牌</a></li>
+										<li><a href="products.html">儿童</a></li>
+										<li><a href="products.html">配饰</a></li>
+									</ul>	
+								</div>
+								<div class="col1 me-one">
+									<h4>热门品牌</h4>
+									<ul>
+										<li><a href="products.html">李宁</a></li>
+										<li><a href="products.html">adidas</a></li>
+										<li><a href="products.html">Nike</a></li>
+										<li><a href="products.html">安踏</a></li>
+										<li><a href="products.html">鸿星尔克</a></li>
+										<li><a href="products.html">Jordan</a></li>
+										<li><a href="products.html">BYLEN</a></li>
+										<li><a href="products.html">BALMAIN</a></li>
+									</ul>	
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--bottom-header-->
+	<!--start-breadcrumbs-->
+	<div class="breadcrumbs">
+		<div class="container">
+			<div class="breadcrumbs-main">
+				<ol class="breadcrumb">
+					<li><a href="index.html">首页</a></li>
+					<li class="active">订单历史</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<!--end-breadcrumbs-->
+	
+	<!--start-my-account-->
+	<div class="my-account">
+		<div class="container">
+			<!-- 这里是个人中心的主要内容区域 -->
+			<div class="container">
+				<!-- 账户信息部分 -->
+				<div class="account-info" style="
+					background: #ffffff;
+					padding: 30px;
+					margin-bottom: 40px;
+					border-radius: 8px;
+					box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+					border: 1px solid #eee;">
+					<h2>账户信息</h2>
+					<div style="
+						margin-top: 25px;
+						display: grid;
+						grid-template-columns: repeat(2, 1fr);
+						gap: 20px;">
+						<div class="info-item" style="
+							padding: 15px;
+							background: #f8f9fa;
+							border-radius: 6px;
+							transition: all 0.3s ease;">
+							<p style="margin: 0;"><strong style="color: #666;">用户ID</strong></p>
+							<p style="margin: 5px 0 0 0; font-size: 16px; color: #333;" id="userId"></p>
+						</div>
+						<div class="info-item" style="
+							padding: 15px;
+							background: #f8f9fa;
+							border-radius: 6px;
+							transition: all 0.3s ease;">
+							<p style="margin: 0;"><strong style="color: #666;">用户名</strong></p>
+							<p style="margin: 5px 0 0 0; font-size: 16px; color: #333;" id="userName"></p>
+						</div>
+						<div class="info-item" style="
+							padding: 15px;
+							background: #f8f9fa;
+							border-radius: 6px;
+							transition: all 0.3s ease;">
+							<p style="margin: 0;"><strong style="color: #666;">邮箱</strong></p>
+							<p style="margin: 5px 0 0 0; font-size: 16px; color: #333;" id="userEmail"></p>
+						</div>
+						<div class="info-item" style="
+							padding: 15px;
+							background: #f8f9fa;
+							border-radius: 6px;
+							transition: all 0.3s ease;">
+							<p style="margin: 0;"><strong style="color: #666;">手机号</strong></p>
+							<p style="margin: 5px 0 0 0; font-size: 16px; color: #333;" id="userPhone"></p>
+						</div>
+						<div class="info-item" style="
+							padding: 15px;
+							background: #f8f9fa;
+							border-radius: 6px;
+							transition: all 0.3s ease;">
+							<p style="margin: 0;"><strong style="color: #666;">注册时间</strong></p>
+							<p style="margin: 5px 0 0 0; font-size: 16px; color: #333;" id="registerTime"></p>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 订单历史部分 -->
+				<div class="order-history" style="margin-top: 30px; padding-left: 30px;">
+					<h2>订单历史</h2>
+					<div id="ordersList" style="margin-top: 20px;">
+						<!-- 这里会通过JavaScript动态添加订单列表 -->
+					</div>
+					<!-- 退出登录按钮 -->
+					<div style="text-align: right; margin-top: 20px;">
+						<button onclick="logout()" class="btn" style="
+							padding: 10px 20px;
+							background: #333;
+							color: white;
+							border: none;
+							border-radius: 4px;
+							cursor: pointer;
+							font-size: 14px;">
+							退出账户
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--end-my-account-->
+	
+	<!--start-footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-top">
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>关于我们</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">我们是谁</a></li>
+						<li><a href="contact.html">联系我们</a></li>
+						<li><a href="#">我们的网站</a></li>
+						<li><a href="#">新闻动态</a></li>
+						<li><a href="#">团队</a></li>
+						<li><a href="#">招贤纳士</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>客户服务</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">常见问题</a></li>
+						<li><a href="#">配送信息</a></li>
+						<li><a href="#">取消订单</a></li>
+						<li><a href="#">退换货</a></li>
+						<li><a href="#">批发订单</a></li>
+						<li><a href="#">购买指南</a></li>					 
+					</ul>
+				</div>
+				<div class="col-md-4 footer-left" style="text-align: center;">
+					<h3>商品分类</h3>
+					<ul style="padding: 0;">
+						<li><a href="#">运动鞋</a></li>
+						<li><a href="#">休闲鞋</a></li>
+						<li><a href="#">正装鞋</a></li>
+						<li><a href="#">派对鞋</a></li>
+						<li><a href="#">民族风格</a></li>				 
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--end-footer-->
+	<!--end-footer-text-->
+	<div class="footer-text">
+		<div class="container">
+			<div class="footer-main">
+				<p class="footer-class">Copyright &copy; 2024 商城名称 All rights reserved.</p>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$().UItoTop({ easingType: 'easeOutQuart' });
+			});
+		</script>
+		<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	</div>
+	<!--end-footer-text-->	
+	<script>
+	function logout() {
+		// 清除登录信息
+		localStorage.removeItem('currentUser');
+		
+		// 显示提示信息
+		alert('退出成功');
+		
+		// 跳转到首页
+		window.location.href = 'index.html';
+	}
+	</script>
+	<style>
+	.order-card {
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 15px;
+		margin-bottom: 20px;
+		background: #fff;
+	}
+	
+	.order-header {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 10px;
+		border-bottom: 1px solid #eee;
+		margin-bottom: 10px;
+	}
+	
+	.order-items {
+		margin: 10px 0;
+	}
+	
+	.order-item {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 0;
+	}
+	
+	.shipping-info {
+		margin-top: 10px;
+		padding: 10px;
+		background: #f9f9f9;
+		border-radius: 4px;
+	}
+	</style>
+	<script>
+	// 页面加载时显示用户信息和订单历史
+	document.addEventListener('DOMContentLoaded', function() {
+		const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+		if(!currentUser) {
+			window.location.href = 'account.html';
+			return;
+		}
+		
+		// 显示用户信息
+		document.getElementById('userId').textContent = currentUser.id || '未设置';
+		document.getElementById('userName').textContent = currentUser.name || '未设置';
+		document.getElementById('userEmail').textContent = currentUser.email;
+		document.getElementById('userPhone').textContent = currentUser.phone || '未设置';
+		document.getElementById('registerTime').textContent = 
+			new Date(currentUser.registerTime).toLocaleString() || '未知';
+		
+		// 显示订单历史
+		const ordersKey = `orders_${currentUser.email}`;
+		const orders = JSON.parse(localStorage.getItem(ordersKey) || '[]');
+		const ordersList = document.getElementById('ordersList');
+		
+		if(orders.length === 0) {
+			ordersList.innerHTML = '<p>暂无订单</p>';
+			return;
+		}
+		
+		// 按日期倒序排序订单
+		orders.sort((a, b) => new Date(b.date) - new Date(a.date));
+		
+		orders.forEach(order => {
+			const orderDate = new Date(order.date).toLocaleString();
+			const orderCard = `
+				<div class="order-card">
+					<div class="order-header" style="cursor: pointer;" onclick="toggleOrder(this)">
+						<span>订单时间：${orderDate}</span>
+						<span>订单总额：¥${order.total}</span>
+						<span style="margin-left: 10px; color: #666;">▼</span>
+					</div>
+					<div class="order-items" style="display: none;">
+						${order.items.map(item => `
+							<div class="order-item" style="display: flex; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee;">
+								<div style="width: 80px; margin-right: 15px;">
+									<img src="${item.image}" style="width: 100%; border-radius: 4px;" alt="${item.name}"/>
+								</div>
+								<div style="flex-grow: 1;">
+									<div style="font-size: 16px; margin-bottom: 5px;">${item.name}</div>
+									<div style="color: #666; font-size: 14px;">尺码: ${item.size}</div>
+									<div style="color: #666; font-size: 14px;">数量: ${item.quantity}</div>
+								</div>
+								<div style="font-size: 16px; color: #e4393c; min-width: 80px; text-align: right;">
+									¥${item.total}
+								</div>
+							</div>
+						`).join('')}
+					</div>
+					<div class="shipping-info" style="display: none;">
+						<p>收货人：${order.shipping.name}</p>
+						<p>联系电话：${order.shipping.phone}</p>
+						<p>收货地址：${order.shipping.address}</p>
+						${order.shipping.note ? `<p>备注：${order.shipping.note}</p>` : ''}
+					</div>
+				</div>
+			`;
+			ordersList.innerHTML += orderCard;
+		});
+	});
+
+	// 添加展开/收起功能
+	function toggleOrder(header) {
+		const orderCard = header.parentElement;
+		const items = orderCard.querySelector('.order-items');
+		const info = orderCard.querySelector('.shipping-info');
+		const arrow = header.querySelector('span:last-child');
+		
+		if (items.style.display === 'none') {
+			items.style.display = 'block';
+			info.style.display = 'block';
+			arrow.textContent = '▲';
+		} else {
+			items.style.display = 'none';
+			info.style.display = 'none';
+			arrow.textContent = '▼';
+		}
+	}
+	</script>
+</body>
+</html> 
