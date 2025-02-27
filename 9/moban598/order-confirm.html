@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>订单确认</title>
+<!-- 引入相同的CSS和JS文件 -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/simpleCart.min.js"></script>
+<script src="js/cart-config.js"></script>
+<style>
+.order-form {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.order-items {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.submit-btn {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background: #444;
+}
+</style>
+</head>
+<body>
+    <!-- 页面头部 -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="breadcrumbs-main">
+                <ol class="breadcrumb">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="checkout.html">购物车</a></li>
+                    <li class="active">订单确认</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- 订单表单 -->
+    <div class="container">
+        <div class="order-form">
+            <h2>订单确认</h2>
+            
+            <!-- 订单商品列表 -->
+            <div class="order-items">
+                <h3>订单商品</h3>
+                <div id="orderItemsList">
+                    <!-- 这里会通过JavaScript动态添加商品列表 -->
+                </div>
+                <div class="order-total" style="text-align: right; margin-top: 15px;">
+                    <strong>总计：¥<span id="orderTotal">0</span></strong>
+                </div>
+            </div>
+            
+            <!-- 收货信息表单 -->
+            <form id="orderForm" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label>收货人姓名</label>
+                    <input type="text" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>联系电话</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>收货地址</label>
+                    <textarea name="address" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>备注</label>
+                    <textarea name="note"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">提交订单</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+    // 页面加载时显示订单信息
+    document.addEventListener('DOMContentLoaded', function() {
+        const orderInfo = JSON.parse(localStorage.getItem('currentOrder'));
+        if(!orderInfo) {
+            alert('订单信息不存在');
+            window.location.href = 'checkout.html';
+            return;
+        }
+        
+        // 显示商品列表
+        const itemsList = document.getElementById('orderItemsList');
+        orderInfo.items.forEach(item => {
+            itemsList.innerHTML += `
+                <div class="order-item" style="display: flex; align-items: center; padding: 15px 0; border-bottom: 1px solid #eee;">
+                    <div style="width: 80px; margin-right: 15px;">
+                        <img src="${item.image}" style="width: 100%; border-radius: 4px;" alt="${item.name}"/>
+                    </div>
+                    <div style="flex-grow: 1;">
+                        <div style="font-size: 16px; margin-bottom: 5px;">${item.name}</div>
+                        <div style="color: #666; font-size: 14px;">尺码: ${item.size}</div>
+                        <div style="color: #666; font-size: 14px;">数量: ${item.quantity}</div>
+                    </div>
+                    <div style="font-size: 16px; color: #e4393c; min-width: 80px; text-align: right;">
+                        ¥${item.total}
+                    </div>
+                </div>
+            `;
+        });
+        
+        // 显示总计
+        document.getElementById('orderTotal').textContent = orderInfo.total;
+    });
+
+    // 提交订单
+    function submitOrder(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const orderInfo = JSON.parse(localStorage.getItem('currentOrder'));
+        
+        // 检查并更新库存
+        const products = JSON.parse(localStorage.getItem('products') || '[]');
+        let canSubmit = true;
+        
+        // 检查所有商品的库存是否充足
+        orderInfo.items.forEach(item => {
+            const product = products.find(p => p.name === item.name);
+            if (product) {
+                if (product.stock < item.quantity) {
+                    canSubmit = false;
+                    return;
+                }
+            }
+        });
+        
+        if (!canSubmit) return;
+        
+        // 更新库存
+        orderInfo.items.forEach(item => {
+            const product = products.find(p => p.name === item.name);
+            if (product) {
+                product.stock -= item.quantity;
+            }
+        });
+        
+        // 保存更新后的库存
+        localStorage.setItem('products', JSON.stringify(products));
+        
+        // 创建完整的订单对象
+        const order = {
+            items: orderInfo.items,
+            total: orderInfo.total,
+            date: orderInfo.date,
+            shipping: {
+                name: formData.get('name'),
+                phone: formData.get('phone'),
+                address: formData.get('address'),
+                note: formData.get('note')
+            }
+        };
+        
+        // 保存订单到用户的订单历史
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const ordersKey = `orders_${currentUser.email}`;
+        let userOrders = JSON.parse(localStorage.getItem(ordersKey) || '[]');
+        userOrders.push(order);
+        localStorage.setItem(ordersKey, JSON.stringify(userOrders));
+        
+        // 清空购物车
+        clearCart();
+        
+        // 清除当前订单信息
+        localStorage.removeItem('currentOrder');
+        
+        window.location.href = 'my-account.html';
+    }
+    </script>
+</body>
+</html> 
